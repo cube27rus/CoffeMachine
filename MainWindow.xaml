@@ -1,0 +1,135 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="403.5"
+        ResizeMode="NoResize">
+    <Border Padding="10">
+        <StackPanel>     
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Column 1 -->
+            
+            <StackPanel x:Name="Jucies" Grid.Column="0" Margin="0 0 10 0" >
+                    <TextBlock Text="Напитки" />
+                    <DockPanel>
+                        <RadioButton  GroupName="Drink" Checked="Drink_Checked" Unchecked="Drink_Unchecked" x:Name="Water" Content="Вода" />
+                        <TextBlock Text="10р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+
+                        <RadioButton  GroupName="Drink" Checked="Drink_Checked"  Unchecked="Drink_Unchecked" x:Name="Espresso" Content="Эспрессо" />
+                        <TextBlock Text="50р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <RadioButton  GroupName="Drink" Checked="Drink_Checked" Unchecked="Drink_Unchecked" x:Name="Latte" Content="Латте" />
+                        <TextBlock Text="75р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <RadioButton  GroupName="Drink" Checked="Drink_Checked" Unchecked="Drink_Unchecked" x:Name="Cappuccino" Content="Капучино" />
+                        <TextBlock Text="60р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <RadioButton  GroupName="Drink" Checked="Drink_Checked" Unchecked="Drink_Unchecked" x:Name="BlackTea" Content="Чай черный" />
+                        <TextBlock Text="30р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <RadioButton  GroupName="Drink" Checked="Drink_Checked" Unchecked="Drink_Unchecked" x:Name="GreenTea" Content="Чай зеленый" />
+                        <TextBlock Text="30р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+            </StackPanel>
+
+            <!-- Column 2 -->
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Еда" />
+                    <DockPanel>
+                        <RadioButton  GroupName="Eat" Checked="Eat_Checked" Unchecked="Eat_Unchecked" x:Name="Bread" Content="Хлеб" />
+                        <TextBlock Text="20р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <RadioButton  GroupName="Eat" Checked="Eat_Checked" Unchecked="Eat_Unchecked" x:Name="Bun" Content="Булочка" />
+                        <TextBlock Text="30р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <RadioButton  GroupName="Eat" Checked="Eat_Checked" Unchecked="Eat_Unchecked" x:Name="Chips" Content="Чипсы" />
+                        <TextBlock Text="50р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <RadioButton  GroupName="Eat" Checked="Eat_Checked" Unchecked="Eat_Unchecked" x:Name="Cookie" Content="Печенье" />
+                        <TextBlock Text="50р" HorizontalAlignment="Right"/>
+                    </DockPanel>           
+            </StackPanel>
+
+        </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Column 1 -->
+
+                <StackPanel x:Name="g3434" Grid.Column="0" Margin="0 0 10 0">
+                    <TextBlock Text="Напитки" />
+                    <DockPanel>
+                        <CheckBox  x:Name="Milk" Checked="DrinkAdditive_Checked" Unchecked="DrinkAdditive_Unchecked" Content="Молоко" />
+                        <TextBlock Text="10р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <CheckBox  x:Name="Syrup" Checked="DrinkAdditive_Checked" Unchecked="DrinkAdditive_Unchecked" Content="Сироп" />
+                        <TextBlock Text="10р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                    
+                        <DockPanel>
+                        <CheckBox  x:Name="Sugar" Checked="DrinkAdditive_Checked" Unchecked="DrinkAdditive_Unchecked" Content="Сахар" />
+
+                        <xctk:IntegerUpDown Name="myUpDownControl" Margin="5 0" Maximum="5" ValueChanged="ChangeShugarValue"/>
+                            <TextBlock Text="3р" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                   
+                </StackPanel>
+
+                <!-- Column 2 -->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Добавки к еде" />
+                    <DockPanel>
+                        <CheckBox Name="Ham"  Checked="EatAdditive_Checked" Unchecked="EatAdditive_Unchecked" Content="Ветчина" />
+                        <TextBlock Text="20р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+
+                    <DockPanel>
+                        <CheckBox Name="Cheese"   Checked="EatAdditive_Checked" Unchecked="EatAdditive_Unchecked" Content="Сыр" />
+                        <TextBlock Text="20р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+
+                    <DockPanel>
+                        <CheckBox Name="Jam"   Checked="EatAdditive_Checked" Unchecked="EatAdditive_Unchecked" Content="Джем" />
+                        <TextBlock Text="20р" HorizontalAlignment="Right"/>
+                    </DockPanel>
+
+
+                </StackPanel>
+
+            </Grid>
+            <DockPanel Height="38">
+                <CheckBox   x:Name="Complex"  Content="Комплекс (1 напиток с любой добавкой &#xD;&#xA;+ 1 еда с любой добавкой на выбор)" Width="306" />
+                <TextBlock Text="90р" HorizontalAlignment="Right"/>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Text="Cтоимость:" HorizontalAlignment="left" Width="83"/>
+                <TextBox Width="125"  Name="Total" Margin="10 0"/>
+                <Button Content="Выдать" Click="GetOrder" />
+            </DockPanel>
+        </StackPanel>
+        
+
+    </Border>
+</Window>
